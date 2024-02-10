@@ -17,17 +17,14 @@ const Search = () => {
   const [page, setPage] = useState(1);
 
   // Search QUeruy
-  const {
-    data: productData,
-    isLoading: productLoading,
-    error: productError,
-  } = useSearchProductQuery({
-    search,
-    category,
-    maxPrice,
-    page,
-    sort,
-  });
+  const { data: productData, isLoading: productLoading } =
+    useSearchProductQuery({
+      search,
+      category,
+      maxPrice,
+      page,
+      sort,
+    });
 
   const {
     data: categoryData,
@@ -106,6 +103,7 @@ const Search = () => {
                   price={i.price}
                   stock={i.stock}
                   productId={i._id}
+                  addToCartHandler={() => {}}
                   photo={`${import.meta.env.VITE_BASE_URL}/${i.photo}`}
                   key={i._id}
                 />

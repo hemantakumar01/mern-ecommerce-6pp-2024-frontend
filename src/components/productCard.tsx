@@ -1,6 +1,5 @@
 import { FaPlus } from "react-icons/fa";
 import "../styles/productCart..scss";
-import { CartItem } from "../types/productType";
 import { addCartItem } from "../redux/cartReducer";
 import { useDispatch } from "react-redux";
 type ProductsProps = {
@@ -9,7 +8,7 @@ type ProductsProps = {
   photo: string;
   price: number;
   stock: number;
-  addToCartHandler: (cartItem: CartItem) => string | undefined;
+  addToCartHandler?: () => void;
 };
 
 const ProductCard = ({
@@ -18,7 +17,6 @@ const ProductCard = ({
   photo,
   price,
   stock,
-  addToCartHandler,
 }: ProductsProps) => {
   const dispatch = useDispatch();
 

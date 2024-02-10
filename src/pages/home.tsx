@@ -32,6 +32,7 @@ const Home = () => {
                 price={i.price}
                 stock={i.stock}
                 productId={i._id}
+                addToCartHandler={() => {}}
                 photo={`${import.meta.env.VITE_BASE_URL}/${i.photo}`}
               />
             ))

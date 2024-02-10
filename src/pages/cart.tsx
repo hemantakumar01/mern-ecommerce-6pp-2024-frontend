@@ -44,7 +44,7 @@ const Cart = () => {
   useEffect(() => {
     dispatch(calculatePrice());
   }, [products]);
-  const { token, cancel } = axios.CancelToken.source();
+  const { token } = axios.CancelToken.source();
   const validateCoupon = () => {
     axios
       .get(

@@ -20,7 +20,7 @@ const Productmanagement = () => {
   const { data } = useSingleProductQuery(id as string);
   const navigate = useNavigate();
 
-  const { user, loading } = useSelector(
+  const { user } = useSelector(
     (state: { userReducer: userReducerInitialType }) => state.userReducer
   );
 
