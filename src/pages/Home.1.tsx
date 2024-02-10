@@ -4,17 +4,12 @@ import { useLatestProductQuery } from "../redux/Api/product";
 import toast from "react-hot-toast";
 import Loader, { Sketch } from "../components/loader";
 import { useDispatch } from "react-redux";
-import { addCartItem } from "../redux/cartReducer";
-import { CartItem } from "../types/productType";
 
 export const Home = () => {
   const { data, isError, isLoading } = useLatestProductQuery("");
   if (isError) toast.error("Product not found");
   const dispatch = useDispatch();
-  const addToCartHandler = (cartItem: CartItem) => {
-    if (cartItem.stock > 1) return toast.error("Out of Stock");
-    dispatch(addCartItem(cartItem));
-  };
+
   return (
     <div className="home">
       <div
