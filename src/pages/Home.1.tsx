@@ -12,7 +12,6 @@ export const Home = () => {
   if (isError) toast.error("Product not found");
   const dispatch = useDispatch();
   const addToCartHandler = (cartItem: CartItem) => {
-    console.log("Clicked");
     if (cartItem.stock > 1) return toast.error("Out of Stock");
     dispatch(addCartItem(cartItem));
   };
@@ -42,7 +41,7 @@ export const Home = () => {
                 price={i.price}
                 stock={i.stock}
                 productId={i._id}
-                addToCartHandler={addToCartHandler}
+                addToCartHandler={() => {}}
                 photo={`${import.meta.env.VITE_BASE_URL}/${i.photo}`}
               />
             ))
