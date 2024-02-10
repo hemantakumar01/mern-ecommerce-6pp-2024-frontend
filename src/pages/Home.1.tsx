@@ -3,12 +3,10 @@ import ProductCard from "../components/productCard";
 import { useLatestProductQuery } from "../redux/Api/product";
 import toast from "react-hot-toast";
 import Loader, { Sketch } from "../components/loader";
-import { useDispatch } from "react-redux";
 
 export const Home = () => {
   const { data, isError, isLoading } = useLatestProductQuery("");
   if (isError) toast.error("Product not found");
-  const dispatch = useDispatch();
 
   return (
     <div className="home">
