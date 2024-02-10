@@ -2,6 +2,7 @@ import { FaPlus } from "react-icons/fa";
 import "../styles/productCart..scss";
 import { addCartItem } from "../redux/cartReducer";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 type ProductsProps = {
   name: string;
   productId: string;
@@ -32,6 +33,7 @@ const ProductCard = ({
             dispatch(
               addCartItem({ name, productId, photo, price, stock, quantity: 1 })
             );
+            toast.success("Added to Card");
           }}
         >
           <FaPlus />
